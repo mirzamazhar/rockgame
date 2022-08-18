@@ -1,44 +1,40 @@
 body {
-    background-color: #D559E9;
+    background-color: rgb(152, 57, 240);
+    margin: 0;
 }
 nav {
+    background-color: rgb(220, 158, 77);
+    max-height: 20vh;
+    width: 100vw;
+    margin: 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    outline: red solid 2px;
-    border: 5px solid red;
-    min-height: 10vh;
-    gap: 8px;
 }
-
-#rock {
-    color: rgb(19, 71, 122);
-}
-
-#paper {
-    color: rgba(129, 8, 8, 0.63);
-}
-#scissors {
-    color: rgb(131, 120, 59);
-}
-
 .logo {
-    background-color: aliceblue;
-    border-radius: 4px;
-    padding: 10px;
+    color: azure;
+    font: 900 24px Poppins;
 }
-
-.left-side {
-    color: antiquewhite;
-    font:  bolder 18px Poppins  ;
+ul {
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+    
+    margin: 0px;
+    gap: 16px;
 }
-
+li  {
+    list-style-type: none;
+}
+.right-side-links {
+    padding: 16px;
+    
+}
 .right-side {
-    gap: 100px;
+    
 }
-
 a {
     text-decoration: none;
-    color: antiquewhite;
-    font: 900 20px Poppins;
+    color: azure;
+    font: 900 18px Poppins;
 }
