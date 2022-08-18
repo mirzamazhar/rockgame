@@ -5,7 +5,7 @@ function getComputerChoice() {
         return randomChoice;
 }
 
-// Function that plays the game by taking player and computer choice as parameters
+// Function that plays one round game by taking player and computer choice as parameters
 function playRound(playerChoice, computerChoice) {
        // Convert inputs to case insensitive
        playerChoice = playerChoice.toLowerCase();
@@ -14,39 +14,58 @@ function playRound(playerChoice, computerChoice) {
        let paperWin = "Paper Covers the Rock!"
        let rockWin = "Rock crushes the Scissors!"
        let scissorsWin = "Scissors cut the Paper!"
-       let playerWin = "You win!"
-       let playerLose = "You lose!"
        // Win Conditions
        if (playerChoice === computerChoice) {
-                return "It's a Draw!";
+                return "It's a Draw!";     
          }
          else if (playerChoice === "rock" && computerChoice === "scissors") {
-                return playerWin + " " + rockWin;
+              playerScore++
+                return `You Win! ${rockWin}`;
          }
          else if (playerChoice==="rock" && computerChoice==="paper") {
-                return playerLose + " " + paperWin;
+              computerScore++
+                return `You lose! ${paperWin}`;
          }
          else if (playerChoice==="paper" && computerChoice==="rock") {
-                return playerWin + " " + paperWin;
+              playerScore++
+             return `You Win! ${paperWin}`;
          }
          else if (playerChoice==="paper" && computerChoice==="scissors") {
-                return playerLose + " " + scissorsWin;
+              computerScore++
+              return `You lose! ${scissorsWin}`; 
          }
          else if (playerChoice==="scissors" && computerChoice==="paper") {
-                return  playerWin +  " " + scissorsWin;
+              playerScore++
+             return `You Win! ${scissorsWin}`;
          }
          else if (playerChoice==="scissors" && computerChoice==="rock") {
-                return playerLose + " " + rockWin;
+              computerScore++
+              return `You lose! ${rockWin}`;
          }
          else {
-              return "I can't recognise the input!";
+              return  "I can't recognise the input!";   
          }
 }
-//  Inputs
-const playerChoice = prompt("Choose Rock, Scissors or Paper!");
-const computerChoice = getComputerChoice();
-console.log("Computer Chose:" + " " + computerChoice)
-console.log("You Chose:" + " " + playerChoice)
-// Execution
-console.log(playRound(playerChoice, computerChoice))
+var playerScore = 0;
+var computerScore = 0;
+// Function with loop game five times and reporting the scores  
+function game() {
+       for (counter = 0; counter < 5; counter++) {
+              const playerChoice = prompt("Choose Rock, Scissors or Paper!").toLowerCase();
+              const computerChoice = getComputerChoice();
+              console.log("Computer Chose:" + " " + computerChoice);
+              console.log("You Chose:" + " " + playerChoice);
+              var roundResult = console.log(playRound(playerChoice, computerChoice));
+       }
+       if (computerScore>playerScore) {
+              console.log(`You lost! Your score was ${playerScore} and Computer Score was ${computerScore}.  Even Computer has better luck than you!`)
+       }
+       else if (computerScore < playerScore) {
+              console.log(`You won! Your score was ${playerScore} and Computer Score was ${computerScore}.  Those Machines don't stand a chance against big brains!`)
+       }
+       else {
+              console.log(`It's a Draw! Your score was ${playerScore} and Computer Score was ${computerScore}. Quite Interesting Game!`)
+       }
+       }
+       game()
 
