@@ -57,6 +57,7 @@ function game() {
        }
        if (computerScore>playerScore) {
               console.log(`You lost! Your score was ${playerScore} and Computer Score was ${computerScore}.  Even Computer has better luck than you!`)
+
        }
        else if (computerScore < playerScore) {
               console.log(`You won! Your score was ${playerScore} and Computer Score was ${computerScore}.  Those Machines don't stand a chance against big brains!`)
@@ -64,6 +65,7 @@ function game() {
        else {
               console.log(`It's a Draw! Your score was ${playerScore} and Computer Score was ${computerScore}. Quite Interesting Game!`)
        }
+       
        }
        game()
 
